@@ -11,8 +11,18 @@ public class InicioController {
         return "login/login.html";
     }
 
-    @GetMapping(value = "/inicio")
+    @GetMapping(value = "/")
     public String inicio(){
         return "inicio/inicio.html";
+    }
+
+    @GetMapping(value = "/lockscreen")
+    public String lockscreen(){
+        return "login/lockscreen.html";
+    }
+
+    @GetMapping(value = "/registerLogin")
+    public String register(){
+        return "login/registerLogin.html";
     }
 }
