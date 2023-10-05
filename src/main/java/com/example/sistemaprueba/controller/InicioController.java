@@ -10,4 +10,9 @@ public class InicioController {
     public String login(){
         return "login/login.html";
     }
+
+    @GetMapping(value = "/inicio")
+    public String inicio(){
+        return "inicio/inicio.html";
+    }
 }
