@@ -76,11 +76,10 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h4 class="header-title">INTRODUZCA LOS SIGUIENTES DATOS</h4>
-                                            <p class="card-title-desc">For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your <code>&lt;form&gt;</code>.</p>
-                                            
-                                            <form class="needs-validation" action="../../../../guardarPersona" novalidate>
-                                                <input type="hidden" th:field="${peronsa.id_persona}">
+                                            <form class="needs-validation" action="/guardarPersona" method="post" novalidate>
+                                                <input type="hidden" th:field="${persona.id_persona}">
+                                                <h4 class="header-title">INTRODUZCA LOS SIGUIENTES DATOS</h4>
+                                                <p class="card-title-desc">For custom Bootstrap form validation messages, you’ll need to add the <code>novalidate</code> boolean attribute to your <code>&lt;form&gt;</code>.</p>
                                                 <div class="row">
                                                     <div class="col-md-4 mb-3">
                                                         <label for="validationCustom01">Nombre</label>
@@ -97,15 +96,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <label for="validationCustom02">Apellido Materno</label>
-                                                        <input type="text" class="form-control" id="validationCustom02" th:field="${persona.ap_materno}" placeholder="Introduce tu apellido Materno" required>
+                                                        <label for="validationCustom03">Apellido Materno</label>
+                                                        <input type="text" class="form-control" id="validationCustom03" th:field="${persona.ap_materno}" placeholder="Introduce tu apellido Materno" required>
                                                         <div class="valid-feedback">
                                                             Looks good!
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <label for="validationCustom02">C.I.</label>
-                                                        <input type="number" class="form-control" id="validationCustom02" th:field="${persona.ci}" placeholder="Introduce tu C.I." required>
+                                                        <label for="validationCustom04">C.I.</label>
+                                                        <input type="number" class="form-control" id="validationCustom04" th:field="${persona.ci}" placeholder="Introduce tu C.I." required>
                                                         <div class="valid-feedback">
                                                             Looks good!
                                                         </div>
@@ -114,37 +113,38 @@
                                                         <label>Género</label>
                                                         <select class="custom-select" th:field="${persona.genero}" required>
                                                             <option value="">Selecciona tu genero</option>
-                                                            <option value="1">Hombre</option>
-                                                            <option value="2">Mujer</option>
-                                                            <option value="3">otro...</option>
+                                                            <option value="Hombre">Hombre</option>
+                                                            <option value="Mujer">Mujer</option>
+                                                            <option value="otro">otro...</option>
                                                         </select>
                                                         <div class="invalid-feedback">Example invalid custom select feedback</div>
                                                     </div>
                                                     <div class="col-md-4 mb-3">
-                                                        <label for="validationCustom02">Fecha de Nacimiento</label>
-                                                        <input type="date" class="form-control" id="validationCustom02" th:field="${persona.fecha_nac}" placeholder="Introduce tu C.I." required>
+                                                        <label for="validationCustom05">Fecha de Nacimiento</label>
+                                                        <input type="date" class="form-control" id="validationCustom05" th:field="${persona.fecha_nac}" placeholder="Introduce tu C.I." required>
                                                         <div class="valid-feedback">
                                                             Looks good!
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="validationCustom03">Nº Celular</label>
-                                                        <input type="number" class="form-control" id="validationCustom03" th:field="${persona.celular}" placeholder="Introduce el numero de celular" required>
+                                                    <div class="col-md-2 mb-3">
+                                                        <label for="validationCustom06">Nº Celular</label>
+                                                        <input type="number" class="form-control" id="validationCustom06" th:field="${persona.celular}" placeholder="Introduce el numero de celular" required>
                                                         <div class="invalid-feedback">
                                                             Please provide a valid city.
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6 mb-3">
-                                                        <label for="validationCustom03">Domicilio</label>
-                                                        <input type="text" class="form-control" id="validationCustom03" th:field="${persona.domicilio}" placeholder="Av/B/" required>
+                                                    <div class="col-md-4 mb-3">
+                                                        <label for="validationCustom07">Domicilio</label>
+                                                        <input type="text" class="form-control" id="validationCustom07" th:field="${persona.direccion}" placeholder="Av/B/" required>
                                                         <div class="invalid-feedback">
                                                             Please provide a valid city.
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
-                                                
+
                                                 <button class="btn btn-primary" type="submit">Registrar</button>
                                             </form>
                                         </div>

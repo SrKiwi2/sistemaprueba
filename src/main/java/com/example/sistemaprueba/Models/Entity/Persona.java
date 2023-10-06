@@ -1,5 +1,6 @@
 package com.example.sistemaprueba.Models.Entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -14,7 +15,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @Table(name="persona")
-public class Persona {
+public class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

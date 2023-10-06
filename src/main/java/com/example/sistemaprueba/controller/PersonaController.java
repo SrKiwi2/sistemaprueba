@@ -18,8 +18,8 @@ public class PersonaController {
     @Autowired
     private IPersonaService personaService;
     
-    @GetMapping(value = "/formPersona")
-    public String formPersona(@Validated Persona persona, Model model){
+    @GetMapping(value = "/formRegistro")
+    public String registroPersona(@Validated Persona persona, Model model){
         
         model.addAttribute("persona", new Persona());
         model.addAttribute("personas", personaService.findAll());
@@ -36,14 +36,6 @@ public class PersonaController {
         return "redirect:/formRegistro";
     }
 
-    /* Lista */
-    
-    @GetMapping(value = "/ListaPersona")
-    public String listarPersona (Model model){
-        model.addAttribute("personas", personaService.findAll());
-        return "listas/listasP";
-    }
-
     /* eliminar */
     
     @RequestMapping(value = "/eliminarPersona/{id_persona}")
@@ -51,7 +43,7 @@ public class PersonaController {
         Persona persona = personaService.findOne(id_persona);
         persona.setEstado_persona("X");
         personaService.save(persona);
-        return "redirect:/listaP";
+        return "redirect:/ListaPersona";
         
     }
 
@@ -61,6 +53,14 @@ public class PersonaController {
     public String editarPersona(@PathVariable("id_persona")Long id_persona, Model model){
         Persona persona = personaService.findOne(id_persona);
         model.addAttribute("persona", persona);
-        return "formulario/formPersona";
+        return "formularios/formPersona";
+    }
+
+    /* Lista */
+    
+    @GetMapping(value = "/ListaPersona")
+    public String listarPersona (Model model){
+        model.addAttribute("personas", personaService.findAll());
+        return "listas/listasP";
     }
 }
