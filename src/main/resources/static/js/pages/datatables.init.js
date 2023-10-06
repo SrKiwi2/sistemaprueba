@@ -7,10 +7,9 @@ File: Datatables Js File
 */
 
 $(document).ready(function() {
-    $('#datatable').DataTable();
-
+    
     //Buttons examples
-    var table = $('#datatable-buttons').DataTable({
+    var table = $('.botonesH').DataTable({
         lengthChange: false,
         buttons: ['copy', 'excel', 'pdf', 'colvis']
     });
