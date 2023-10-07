@@ -25,4 +25,9 @@ public class InicioController {
     public String register(){
         return "login/registerLogin.html";
     }
+
+    @GetMapping(value = "/registerUsuario")
+    public String Usuario(){
+        return "formularios/formUsuario";
+    }
 }
